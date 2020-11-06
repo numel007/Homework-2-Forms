@@ -4,7 +4,19 @@
         <title>Compliments Results</title>
     </head>
     <body>
-        <!-- Your HTML code goes here! -->
+        <ul>
+            {% if compliments == "yes" %}
+                {{name}} wanted {{compliment_count}} compliments.
+
+                {% for i in range(compliment_count) %}
+                    <li>{{name}} is {{random_compliments[i]}}</li>
+                {% endfor %}
+            {% elif compliments == "no" %}
+                {{name}} did not want compliments.
+            {% else %}
+                Something went wrong with if statement
+            {% endif %}
+        </ul>   
 
         
 
